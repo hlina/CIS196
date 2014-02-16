@@ -39,7 +39,7 @@ class QuotesController < ApplicationController
 	def destroy
 		@quote = Quote.find(params[:id])
 		@quote.destroy
-		redirect_to books_path
+		redirect_to quotes_path
 	end
 
 end

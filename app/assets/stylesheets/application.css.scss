@@ -16,6 +16,23 @@ body{
 	padding: 10px;
 	z-index:1;
 }
+
+.quotes a{
+	position: fixed;
+	top: 400px;
+	right: 200px;
+	text-decoration: none;
+}
+
+.books a{
+	position: fixed;
+	width: 900px;
+	top: 450px;
+	left: 100px;
+	text-decoration: none;
+	font-size: 38px;
+}
+
 //NAVBAR
 .nav{	
 	position: relative;
@@ -36,7 +53,7 @@ ul{
 	display: inline;
 }
 
-.nav-link{
+#right a{
 	padding: 10px;
 	padding-top: 13px;
 	padding-bottom: 14px;
@@ -45,6 +62,14 @@ ul{
 	float: right;
 }
 
+#left a{
+	padding: 10px;
+	padding-top: 13px;
+	padding-bottom: 14px;
+	text-decoration:none;
+	color: #D7D7D7;
+	float: left;
+}
 
 .dropdown ul{
    display: none; 
@@ -53,10 +78,11 @@ ul{
 }
 
 .dropdown:hover ul {
-	position:relative;
+	position:absolute;
 	float: right;
 	display: block;
 	top:42px;
+	right:0;
 	margin: 0;
 	padding: 0;
 	z-index: 5;
@@ -80,3 +106,4 @@ ul{
 	text-decoration: none;
 	text-shadow: 0 1px 0 #282828;
 }
+

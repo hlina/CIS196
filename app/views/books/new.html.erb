@@ -14,25 +14,25 @@
 <% end %>
 
 <div class= "field">
-	<p>title</p>
+	<p>Title</p>
 	<%=f.text_field :title%>
 </div>
 <div class= "field">
-	<p>body</p>
+	<p>Comments</p>
 	<%= f.text_area :body %>
 </div>
 <div class="field">
-	<p>category</p>
+	<p>Category</p>
 	<%= f.text_field :category %>
 </div>
 
 <div class="field">
-	<p>date</p>
+	<p>Date Finished</p>
 	<%= f.text_field :date %>
 </div>
 
 <div class="field">
-	<p>rating</p>
+	<p>Rating</p>
 	<%= f.text_field :rating %>
 </div>
 <div class="field">
@@ -44,4 +44,4 @@
 </div>
 
 <%end%>
-<%= link_to 'Back', books_path %>
+<%= link_to 'See All Books', books_path %>

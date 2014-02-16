@@ -1,4 +1,6 @@
 HW4::Application.routes.draw do
+  get "home/index"
+  
   resources :quotes
   resources :books
   resources :users

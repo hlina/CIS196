@@ -5,7 +5,6 @@ class BooksController < ApplicationController
 
 	def create
 		@book = Book.new(book_params)
-		#@book.save Do we need this?
 		if @book.save
 			redirect_to books_path
 		else

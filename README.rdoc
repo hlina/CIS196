@@ -1,28 +1,15 @@
-== README
+I created the schema below for my app idea that features books and quotes the user has read.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Schema
+1) Users
+name: string, email:string, password:string
+2) Books
+title: string, body:text, category:string, date:date, rating:float,user:belongs_to
+3)Quotes
+body:text, category:string, user:belongs_to
 
-Things you may want to cover:
+I had trouble with some basic styling and understanding how the links and paths in Rails worked. I am also continuing to have trouble with the CSS in the home.css file under assest/stylsheets, since it is not working or affecting my code. Thus my styling for the home page is in application.css too.
 
-* Ruby version
+Heroku link
+http://young-cliffs-7981.herokuapp.com/
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

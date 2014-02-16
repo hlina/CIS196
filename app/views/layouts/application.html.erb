@@ -5,22 +5,29 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="public/bootstrap.min.css">
 </head>
 <body>
 	<div class="navbar">
-		<ul class="nav"> 	<!--Why is it necessary to have so many classes?-->
-			<li class='dropdown'><a class="nav-link" href="#">Users</a>
-				<ul>
-					<li><%= link_to "New User", new_user_path %></li>
-					<li><%= link_to "All Users", users_path %></li>
-				</ul>
-			</li>
-			<li class='nav-link'><%= link_to "Books", new_book_path %></li>
-			<li class='nav-link'><%= link_to "Quotes", new_quote_path %></li>
+		<ul class="nav">
+			<div id="left">
+				<li class='nav-link home'><%= link_to "Home", home_index_path %></li>
+			</div>
+
+			<div id="right">
+				<li class='dropdown nav-link'><a href="#">Users</a>
+					<ul>
+						<li><%= link_to "New User", new_user_path %></li>
+						<li><%= link_to "All Users", users_path %></li>
+					</ul>
+				</li>
+				<li class='nav-link'><%= link_to "+Books", new_book_path %></li>
+				<li class='nav-link'><%= link_to "+Quotes", new_quote_path %></li>
+			</div>
 		</ul>
 	</div>
 
-<div class="content">
+	<div class="content">
 <%= yield %>
 </div>
 
