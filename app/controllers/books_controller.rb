@@ -12,8 +12,6 @@ class BooksController < ApplicationController
 		end
 	end
 
-	#private Why was this in the instructions earlier?
-
 	def book_params
 		params.require(:book).permit(:title, :body, :category, :date, :rating, :user_id)
 	end

@@ -30,7 +30,7 @@ class QuotesController < ApplicationController
 		@quote = Quote.find(params[:id])
 
 		if @quote.update(params[:quote].permit(:title, :body))
-			redirect_to @book
+			redirect_to @quote
 		else
 			render 'edit'
 		end
