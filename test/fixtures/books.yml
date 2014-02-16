@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyText
+  category: MyString
+  user_id: 
+  date: 2014-02-14
+  rating: 1.5
+
+two:
+  title: MyString
+  body: MyText
+  category: MyString
+  user_id: 
+  date: 2014-02-14
+  rating: 1.5

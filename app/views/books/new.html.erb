@@ -1,0 +1,47 @@
+<%= form_for(@book) do |f| %> <!--Do I need to add a url here?-->
+
+<% if @book.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@book.errors.count, "error") %> prohibited
+		this book from being saved: 
+	</h2>
+		<ul>
+			<% @book.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+</div>
+<% end %>
+
+<div class= "field">
+	<p>title</p>
+	<%=f.text_field :title%>
+</div>
+<div class= "field">
+	<p>body</p>
+	<%= f.text_area :body %>
+</div>
+<div class="field">
+	<p>category</p>
+	<%= f.text_field :category %>
+</div>
+
+<div class="field">
+	<p>date</p>
+	<%= f.text_field :date %>
+</div>
+
+<div class="field">
+	<p>rating</p>
+	<%= f.text_field :rating %>
+</div>
+<div class="field">
+	<p>user</p>
+	<%= f.collection_select :user_id, User.all, :id, :name%>
+</div>
+<div class= "actions">
+	<%= f.submit %>
+</div>
+
+<%end%>
+<%= link_to 'Back', books_path %>
