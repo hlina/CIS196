@@ -34,7 +34,7 @@ class QuotesController < ApplicationController
 	def update
 		@quote = Quote.find(params[:id])
 
-		if @quote.update(params[:quote].permit(:title, :body))
+		if @quote.update(quote_params)
 			redirect_to @quote
 		else
 			render 'edit'
