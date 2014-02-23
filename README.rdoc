@@ -1,17 +1,9 @@
-I created the schema below for my app idea that features books and quotes the user has read.
+I created the schema below for my app idea that features books and quotes the user has read. I finished adding the show, edit, and delete links to my app for quotes, books, and users.
 
-Schema
-1) Users
-name: string, email:string, password:string
-2) Books
-title: string, body:text, category:string, date:date, rating:float,user:belongs_to
-3)Quotes
-body:text, category:string, user:belongs_to
-
-I had trouble with some basic styling and understanding how the links and paths in Rails worked. I am also continuing to have trouble with the CSS in the home.css file under assest/stylsheets, since it is not working or affecting my code. Thus my styling for the home page is in application.css too.
+I had trouble making the "show all quotes" and "create quotes" work. The error kept telling me "quote.user.name" was a nil class. I realized it was because I had created a quote that did not belong to a user. So, every time I tried to show all quotes after creating a new quote, there would be that error message. I fixed the bug with an unless statement.
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/
 
-*Note the "Books" and "See Quotes" on the home page are links.
+*Note the "Books" and "See Quotes" on the home page are links.  
 

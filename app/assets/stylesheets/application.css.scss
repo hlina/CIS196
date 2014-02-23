@@ -74,7 +74,6 @@ ul{
 .dropdown ul{
    display: none; 
    width: 10em; /* Width to help Opera out */
-   
 }
 
 .dropdown:hover ul {
@@ -94,11 +93,6 @@ ul{
 	background-color:#3f3f3f;
 	padding: 5px;
 }
-.dropdown li a {
-	text-align: left;
-	text-decoration: none;
-}
-
 .dropdown li a {
 	float: none;
 	padding: 10px 15px 10px;

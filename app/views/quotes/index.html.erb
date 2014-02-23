@@ -7,12 +7,12 @@
 	</tr>
 	<% @quotes.each do |quote| %>
 	<tr>
-		<td><%= quote.body%></td>
-		<td><%= quote.category%></td>
-		<td><%= quote.user.name %></td>
+		<td><%= quote.body %></td>
+		<td><%= quote.category %></td>
+		<td><%= quote.user.name unless quote.user.nil? %></td>
 		<td><%= link_to 'Show', quote %></td>
 		<td><%= link_to 'Edit', edit_quote_path(quote) %></td>
-		<td><%= link_to 'Destroy', quote_path(quote),
+		<td><%= link_to 'Delete', quote_path(quote),
                     method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	</tr>
 	

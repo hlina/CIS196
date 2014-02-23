@@ -26,6 +26,11 @@ class QuotesController < ApplicationController
 		@quote = Quote.find(params[:id])
 	end
 
+
+	def edit
+		@quote = Quote.find(params[:id])
+	end
+
 	def update
 		@quote = Quote.find(params[:id])
 
@@ -43,8 +48,3 @@ class QuotesController < ApplicationController
 	end
 
 end
-
-
-
-
-
