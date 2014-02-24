@@ -5,5 +5,6 @@ I had trouble making the "show all quotes" and "create quotes" work. The error k
 Heroku link
 http://young-cliffs-7981.herokuapp.com/
 
-*Note the "Books" and "See Quotes" on the home page are links.  
+*Note the "Books" and "See Quotes" on the home page are links. 
+Also, the lack of images on the home page will change soon once I figure out how to use Gems that will post a random quote and a line of book images from the indexes. :)
 
