@@ -33,6 +33,10 @@
     <%= f.text_area :rating %>
   </p>
 
+  <div class="field">
+    <%= f.hidden_field :user_id, :vallue =>current_user.id%>
+  </div>
+
   <p>
     <%= f.submit %>
   </p>

@@ -1,9 +1,9 @@
 HW4::Application.routes.draw do
+  devise_for :users
   get "home/index"
   
   resources :quotes
   resources :books
-  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -4,6 +4,7 @@
   <title>HW4</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= filepicker_js_include_tag %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" type="text/css" href="public/bootstrap.min.css">
 </head>
@@ -15,21 +16,29 @@
 			</div>
 
 			<div id="right">
-				<li class='dropdown nav-link'><a href="#">Users</a>
-					<ul>
-						<li><%= link_to "New User", new_user_path %></li>
-						<li><%= link_to "All Users", users_path %></li>
-					</ul>
-				</li>
 				<li class='nav-link'><%= link_to "+Books", new_book_path %></li>
 				<li class='nav-link'><%= link_to "+Quotes", new_quote_path %></li>
+				
+				<% if !user_signed_in? %> 
+				<li> 
+					<%=link_to('Login', new_user_session_path) %>
+				</li>
+				
+				<%else%>
+				<li>
+					<%=link_to('Logout', destroy_user_session_path, :method => :delete) %>
+				</li>
+				<%end%>
+
 			</div>
 		</ul>
 	</div>
+<p class="notice"><%=notice%></p>
+<p class="alert"><%=alert%></p>
 
 	<div class="content">
-<%= yield %>
-</div>
+	<%= yield %>
+	</div>
 
 </body>
 </html>

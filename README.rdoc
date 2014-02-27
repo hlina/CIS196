@@ -1,9 +1,8 @@
-I created the schema below for my app idea that features books and quotes the user has read. I finished adding the show, edit, and delete links to my app for quotes, books, and users.
+I created the schema below for my app idea that features books and quotes the user has read. I finished adding the Gem Devise, that will allow me to create user log-ins and log outs.
 
-I had trouble making the "show all quotes" and "create quotes" work. The error kept telling me "quote.user.name" was a nil class. I realized it was because I had created a quote that did not belong to a user. So, every time I tried to show all quotes after creating a new quote, there would be that error message. I fixed the bug with an unless statement.
+I also had wanted to add the gem filepicker, but I was having trouble configuring it. Since I have three midterms coming up, I didn't have time to figure it out!
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/
 
-*Note the "Books" and "See Quotes" on the home page are links.  
-
+*Note the "Books" and "See Quotes" on the home page are links. Also, the lack of images on the home page will change soon once I figure out how to use Gems that will post a random quote and a line of book images from the indexes. :)

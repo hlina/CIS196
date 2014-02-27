@@ -71,33 +71,4 @@ ul{
 	float: left;
 }
 
-.dropdown ul{
-   display: none; 
-   width: 10em; /* Width to help Opera out */
-}
-
-.dropdown:hover ul {
-	position:absolute;
-	float: right;
-	display: block;
-	top:42px;
-	right:0;
-	margin: 0;
-	padding: 0;
-	z-index: 5;
-}
-.dropdown li {
-	display: block;
-	float: none; 
-	list-style-type: none;
-	background-color:#3f3f3f;
-	padding: 5px;
-}
-.dropdown li a {
-	float: none;
-	padding: 10px 15px 10px;
-	color: #c5c5c5;
-	text-decoration: none;
-	text-shadow: 0 1px 0 #282828;
-}
 

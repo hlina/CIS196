@@ -35,10 +35,12 @@
 	<p>Rating</p>
 	<%= f.text_field :rating %>
 </div>
+
 <div class="field">
 	<p>user</p>
-	<%= f.collection_select :user_id, User.all, :id, :name%>
+	<%= f.hidden_field :user_id, :value => current_user.id %>
 </div>
+
 <div class= "actions">
 	<%= f.submit %>
 </div>
