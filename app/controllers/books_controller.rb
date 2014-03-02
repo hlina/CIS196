@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 		if user_signed_in?
 			@book = Book.new
 		else 
-			redirect_to_new_user_session_path
+			redirect_to new_user_session_path
 		end
 	end
 

@@ -1,14 +1,9 @@
 I created the schema below for my app idea that features books and quotes the user has read. I finished adding the Gem Devise, that will allow me to create user log-ins and log outs.
 
-I also had wanted to add the gem filepicker, but I was having trouble configuring it. Since I have three midterms coming up, I didn't have time to figure it out!
+I had trouble allowing the user to see the homepage without signing in, and it's because I had an authenticate in the application_controller that blocked everything.
+I also had wanted to add the gem filepicker to add images of book posts on my home page, but I was having trouble configuring it. Since I have three midterms coming up, I didn't have time to figure it out, but hopefully I'll add that eventually!
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/
 
-<<<<<<< HEAD
-*Note the "Books" and "See Quotes" on the home page are links. Also, the lack of images on the home page will change soon once I figure out how to use Gems that will post a random quote and a line of book images from the indexes. :)
-=======
 *Note the "Books" and "See Quotes" on the home page are links. 
-Also, the lack of images on the home page will change soon once I figure out how to use Gems that will post a random quote and a line of book images from the indexes. :)
-
->>>>>>> c50641074bf6eec6f797a3ff972809d05259023c
