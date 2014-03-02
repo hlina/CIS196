@@ -5,4 +5,10 @@ I also had wanted to add the gem filepicker, but I was having trouble configurin
 Heroku link
 http://young-cliffs-7981.herokuapp.com/
 
+<<<<<<< HEAD
 *Note the "Books" and "See Quotes" on the home page are links. Also, the lack of images on the home page will change soon once I figure out how to use Gems that will post a random quote and a line of book images from the indexes. :)
+=======
+*Note the "Books" and "See Quotes" on the home page are links. 
+Also, the lack of images on the home page will change soon once I figure out how to use Gems that will post a random quote and a line of book images from the indexes. :)
+
+>>>>>>> c50641074bf6eec6f797a3ff972809d05259023c
