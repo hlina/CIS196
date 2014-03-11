@@ -8,9 +8,9 @@ Bundler.require(:default, Rails.env)
 
 module HW4
   class Application < Rails::Application
-    #config.filepicker_rails.api_key = "Your filepicker.io API Key"
-    #config.filepicker_rails.secret_key = "Your filpicker.io Secret Key"
-    #config.filepicker_rails.cdn_host = "Your CDN host name"
+    config.filepicker_rails.api_key = "A6yFfKfDwSdyOq605KTJoz"
+    config.filepicker_rails.secret_key = "PFMHWJUACRGJVOKZ3T7OZC47EI"
+        
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

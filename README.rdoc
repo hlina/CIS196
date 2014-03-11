@@ -1,7 +1,4 @@
-I created the schema below for my app idea that features books and quotes the user has read. I finished adding the Gem Devise, that will allow me to create user log-ins and log outs.
-
-I had trouble allowing the user to see the homepage without signing in, and it's because I had an authenticate in the application_controller that blocked everything.
-I also had wanted to add the gem filepicker to add images of book posts on my home page, but I was having trouble configuring it. Since I have three midterms coming up, I didn't have time to figure it out, but hopefully I'll add that eventually!
+I added three forms of validation. First, I added a presence validation for book's titles, bodies, and quote's titles. I also added a length validation for books' body at a max of 1500 characters to prevent people from writing extremely long reviews. Finally, I added a uniqueness validation for quotes' titles to ideally prevent people from posting the same quote as someone else.
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/

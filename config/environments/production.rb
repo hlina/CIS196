@@ -1,5 +1,6 @@
 HW4::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.filepicker_rails.cdn_host = "Your CDN host name"
 
   # Code is not reloaded between requests.
   config.cache_classes = true

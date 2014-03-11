@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 has_many :books, :dependent => :destroy
 has_many :quotes, :dependent => :destroy
+
 end
+
