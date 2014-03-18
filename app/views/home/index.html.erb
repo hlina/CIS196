@@ -5,3 +5,12 @@
 <div class="books">
 	<%= link_to "Books", books_path %>
 </div>
+
+<tr>
+<% Book.all.each do |book| %>
+	<td class = "bookscroll">
+		<h1><%= link_to book.title, book%></h1>
+		<p> <%=filepicker_image_tag book.filepicker_url, w:160, h:160, fit: 'clip' %> </p>
+	</td>
+<%end%>
+</tr>

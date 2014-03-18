@@ -14,7 +14,9 @@ class QuotesController < ApplicationController
 		else
 
 			if @quote.save 
-				redirect_to quotes_path 
+				redirect_to quotes_path
+				Notifications.new_comment(@comment).deliver
+				redirect_to_
 			else
 				render 'new'
 			end

@@ -4,4 +4,5 @@ class Book < ActiveRecord::Base
   #validations
   validates :title, presence: true
   validates :body, length: {maximum: 1500}, presence: true
+  validates :filepicker_url, presence: true
 end

@@ -17,6 +17,12 @@
 	<p>Title</p>
 	<%=f.text_field :title%>
 </div>
+
+ <div class= "field">
+    <%= f.label :filepicker_url, "Upload Book Image:" %>
+    <%= f.filepicker_field :filepicker_url %>
+ </div>
+
 <div class= "field">
 	<p>Comments</p>
 	<%= f.text_area :body %>

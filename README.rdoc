@@ -1,4 +1,4 @@
-I added three forms of validation. First, I added a presence validation for book's titles, bodies, and quote's titles. I also added a length validation for books' body at a max of 1500 characters to prevent people from writing extremely long reviews. Finally, I added a uniqueness validation for quotes' titles to ideally prevent people from posting the same quote as someone else.
+I added three forms of validation. First, I added a presence validation for book's titles, bodies, and quote's titles. I also added a length validation for books' body at a max of 1500 characters to prevent people from writing extremely long reviews. After adding another gem, filepicker, I added another validation that requires a user to upload an image with a book. Finally, I added a uniqueness validation for quotes' titles to ideally prevent people from posting the same quote as someone else. Please ignore the strange styling for now. I am working on fixing that.
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/

@@ -1,6 +1,9 @@
 <p>
 	<strong>Title</strong>
 	<%= @book.title %>
+	
+	<%= filepicker_image_tag @book.filepicker_url, w: 160, h: 160, fit: 'clip' %>
+
 </p>
 
 <p>

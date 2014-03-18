@@ -33,6 +33,19 @@ body{
 	font-size: 38px;
 }
 
+.bookscroll {
+	position: relative;
+	height: 200px;
+	top: 50px;
+}
+
+.bookscroll a{
+	font-size: 13px;
+	text-decoration: none;
+	color: black;
+	padding: 2px;
+}
+
 //NAVBAR
 .nav{	
 	position: relative;
