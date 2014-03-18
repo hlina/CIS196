@@ -1,6 +1,6 @@
 HW4::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.filepicker_rails.cdn_host = 'young-cliffs-7981.herokuapp.com/books/new'
+  #config.filepicker_rails.cdn_host = 'young-cliffs-7981.herokuapp.com'
 
   # Code is not reloaded between requests.
   config.cache_classes = true
