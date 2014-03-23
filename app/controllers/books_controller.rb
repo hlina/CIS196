@@ -22,6 +22,7 @@ class BooksController < ApplicationController
 
 	def index
 		@books = Book.all
+		@borrowed = Borrowed.new
 	end
 
 	def show
@@ -55,7 +56,7 @@ class BooksController < ApplicationController
 	private
 
 	def book_params
-		params.require(:book).permit(:title, :filepicker_url, :body, :category, :date, :rating, :user_id)
+		params.require(:book).permit(:title, :filepicker_url, :body, :category, :date, :rating, :user_id, :available)
 	end
 
 end

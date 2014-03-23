@@ -11,7 +11,7 @@ module HW4
     config.filepicker_rails.api_key = "A6yFfKfDwSdyOq605KTJoz"
     config.filepicker_rails.secret_key = "PFMHWJUACRGJVOKZ3T7OZC47EI"
 
-    #config.action_mailer.default_url_options = {:host => "localhost:3000"}
+    config.action_mailer.default_url_options = {:host => "localhost:3000"}
     
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

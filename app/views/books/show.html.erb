@@ -21,5 +21,14 @@
 	<%= @book.rating %>
 </p>
 
+<p>
+	<strong>Available to Borrow</strong>
+	<% if book.available%>
+		<%="I own it"%>
+	<%else%>
+		<%="I don't own it"%>
+	<%end%>
+</p>
+
 <%= link_to 'Back', books_path %> 
 <%= link_to 'Edit', edit_book_path(@book) %>

@@ -36,6 +36,11 @@
     <%= f.text_area :rating %>
   </p>
 
+  <p>
+    <%= f.label :available %><br>
+    <%= f.select :available %>
+  </p>
+  
   <div class="field">
     <%= f.hidden_field :user_id, :value =>current_user.id%>
   </div>

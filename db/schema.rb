@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317164225) do
+ActiveRecord::Schema.define(version: 20140323211348) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -23,9 +23,20 @@ ActiveRecord::Schema.define(version: 20140317164225) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "filepicker_url"
+    t.boolean  "available"
   end
 
   add_index "books", ["user_id"], name: "index_books_on_user_id"
+
+  create_table "borrowed", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "borrowed", ["book_id"], name: "index_borrowed_on_book_id"
+  add_index "borrowed", ["user_id"], name: "index_borrowed_on_user_id"
 
   create_table "quotes", force: true do |t|
     t.text     "body"

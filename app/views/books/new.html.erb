@@ -43,6 +43,10 @@
 </div>
 
 <div class="field">
+	<p>Check box if you own this book:</p>
+	<%= f.check_box :available%>
+
+<div class="field">
 	<p>user</p>
 	<%= f.hidden_field :user_id, :value => current_user.id %>
 </div>

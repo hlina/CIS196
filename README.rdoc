@@ -1,4 +1,4 @@
-I added three forms of validation. First, I added a presence validation for book's titles, bodies, and quote's titles. I also added a length validation for books' body at a max of 1500 characters to prevent people from writing extremely long reviews. After adding another gem, filepicker, I added another validation that requires a user to upload an image with a book. Finally, I added a uniqueness validation for quotes' titles to ideally prevent people from posting the same quote as someone else. Please ignore the strange styling for now. I am working on fixing that.
+I added the Send Grid addon and a new controller called Borrowed. I also added a variable to the books table called available to represent if the user who posted teh book actually owns it and is willing to lend it. If a book is available to be lent, there will be a button in the book index called "Borrowed." If hte user requests to borrow the book, an email will be sent to the user who owns the book using SendGrid. Please ignore the strange styling for now. I am working on fixing that.
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/
