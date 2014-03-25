@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
   <link rel="stylesheet" type="text/css" href="public/bootstrap.min.css">
 </head>
+
 <body>
 	<div class="navbar">
 		<ul class="nav">
@@ -16,7 +17,10 @@
 			</div>
 
 			<div id="right">
+				<% if user_signed_in? %>
 				<li class='nav-link'><%= link_to "Edit Profile", edit_user_registration_path %></li>
+				<%end%>
+				
 				<li class='nav-link'><%= link_to "+Books", new_book_path %></li>
 				<li class='nav-link'><%= link_to "+Quotes", new_quote_path %></li>
 				<% if !user_signed_in? %> 
@@ -29,7 +33,6 @@
 					<%=link_to('Logout', destroy_user_session_path(:authenticity_token => form_authenticity_token()), :method => :delete) %>
 				</li>
 				<%end%>
-
 			</div>
 		</ul>
 	</div>

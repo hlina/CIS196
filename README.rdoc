@@ -1,4 +1,4 @@
-I added the Send Grid addon and a new controller called Borrowed. I also added a variable to the books table called available to represent if the user who posted teh book actually owns it and is willing to lend it. If a book is available to be lent, there will be a button in the book index called "Borrowed." If hte user requests to borrow the book, an email will be sent to the user who owns the book using SendGrid. Please ignore the strange styling for now. I am working on fixing that.
+I added the Send Grid addon and a new controller called Borrowed. I also added a variable to the books table called available to represent if the user who posted teh book actually owns it and is willing to lend it. If a book is available to be lent, there will be a button in the book index called "Borrowed." If hte user requests to borrow the book, an email will be sent to the user who owns the book using SendGrid. Please ignore the strange styling for now. I am working on fixing that. Also error pages keep happening if you're not signed in first, so make sure you create an account and sign in. I am working on fixing that too.
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/

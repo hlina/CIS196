@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+	
 	def new
 		if user_signed_in?
 		@quote = Quote.new

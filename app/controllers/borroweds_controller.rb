@@ -17,4 +17,5 @@ end
 def borrowed_params
 	params.require(:borrowed).permit(:user_id, :book_id)
 end
+
 end
