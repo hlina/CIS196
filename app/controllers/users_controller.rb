@@ -51,5 +51,6 @@ class UsersController < ApplicationController
 			@followers = Follower.where(follower_id: current_user.id)
 		else
 			redirect_to users_path
-		end	
+		end
+	end	
 end
