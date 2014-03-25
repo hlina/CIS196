@@ -23,10 +23,25 @@
 
 <p>
 	<strong>Available to Borrow</strong>
-	<% if book.available%>
+	<% if @book.available%>
 		<%="I own it"%>
 	<%else%>
 		<%="I don't own it"%>
+	<%end%>
+</p>
+
+<p>
+	<% if !(Borrowed.find_by book_id: @book.id) %>
+		<%= form_for(@borrowed) do |f| %>
+			<div class = "field">
+			<%= f.hidden_field :user_id, :value => current_user.id %> </div>
+			<div class = "field">
+			<%= f.hidden_field :book_id, :value => @book.id %> </div>
+			<div class= "actions">
+				<%= f.submit %> </div>
+		<%end%>
+	<%else%>
+		<%= "This book is out" %>
 	<%end%>
 </p>
 

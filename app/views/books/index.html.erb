@@ -26,14 +26,14 @@
 			<%else%>
 			<%="I don't own it"%>
 			<%end%></td>
-			<% if !(Borrowed.find_by book_id: book.id) %>
+			<% if !(Borrowed.find_by book_id: book.id) && book.available %>
 		<td> <%= form_for(@borrowed) do |f| %>
 			<div class = "field">
 			<%= f.hidden_field :user_id, :value => current_user.id %> </div>
 			<div class = "field">
 			<%= f.hidden_field :book_id, :value => book.id %> </div>
 			<div class= "actions">
-				<%= f.submit %> </div>
+			<%= f.submit %> </div>
 			<%end%>
 		</td>
 		<%else%>

@@ -44,4 +44,12 @@ class UsersController < ApplicationController
 		@user.destroy
 		redirect_to users_path
 	end
+
+	def dash
+		if user_signed_in?
+			@user = current_user
+			@followers = Follower.where(follower_id: current_user.id)
+		else
+			redirect_to users_path
+		end	
 end

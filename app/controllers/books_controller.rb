@@ -27,6 +27,7 @@ class BooksController < ApplicationController
 
 	def show
 		@book = Book.find(params[:id])
+		@borrowed = Borrowed.new
 	end
 
 	def edit

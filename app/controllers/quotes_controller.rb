@@ -10,13 +10,10 @@ class QuotesController < ApplicationController
 	def create
 		@quote = Quote.new(quote_params)
 		if @quote.user_id != current_user.id
-			render 'edit'
+			render 'new'
 		else
-
 			if @quote.save 
 				redirect_to quotes_path
-				Notifications.new_comment(@comment).deliver
-				redirect_to_
 			else
 				render 'new'
 			end

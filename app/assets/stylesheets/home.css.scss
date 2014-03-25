@@ -1,19 +1,31 @@
-.quotes{
-	background-color:blue;
-	position: absolute;
-	top: 100px;
-	width: 900px;
-	margin-left: auto;
-	margin-right: auto;
+.quotes a{
+	position: fixed;
+	top: 350px;
+	right: 200px;
 	text-decoration: none;
 }
 
-.books{
-	position: absolute;
+.books a{
+	position: fixed;
+	width: 900px;
 	top: 400px;
-	width: 900px;
-	margin-left: auto;
-	margin-right: auto;
+	left: 100px;
 	text-decoration: none;
+	font-size: 38px;
 }
 
+.bookscroll {
+	position: relative;
+	height: 200px;
+	top: px;
+	margin: 5 px 5px;
+}
+
+.bookscroll a{
+	font-size: 16px;
+	text-decoration: none;
+	color: black;
+	padding: 2px;
+	display: inline;
+
+}

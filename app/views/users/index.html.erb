@@ -8,11 +8,40 @@
 	<tr>
 		<td><%= user.name%></td>
 		<td><%= user.email%></td>
-		<td><% user.password%></td>
+		<% if Follower.where("follower_id = ? AND followee_id = ?", current_user.id, user.id).empty? %>
+		<td> <%form_for (Follower.new) do |f|%>
+			<div class="field">
+				<%= f.hidden_field :follower_id, :value=> current_user.id%>
+			</div>
+
+			<div class="field">
+				<%f.hidden_field :follower_id, :value=> user.id%>
+			</div>
+
+			<div class="action">
+				<%f.submit "follow"%>
+			</div>
+		</td>
+
+		<%else%>
+		<td><%= button_to "unfollow", follow, method: :delete %></td>
+		<%end%>
+
 		<td><%= link_to 'Show', user %></td>
 		<td><%= link_to 'Edit', edit_user_path(user.id) %></td>
 		<td><%= link_to 'Delete', user,
 	               confirm: 'Are you sure?',method: :delete %></td>
 	</tr>
 	<%end%>
+	
+	<tr>
+		<td>Follower</td>
+		<td>Followee</td>
+		<% Follower.all.each do |follow|%>
+		<td><%= follow.follower.name %></td>
+		<td><%= follow.folowee.name %></td>
+		<td><%= button_to "unfollow",follow, method: :delete %></td>
+	</tr>
+	<%end%>
+
 </table>

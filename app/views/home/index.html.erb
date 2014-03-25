@@ -1,16 +1,21 @@
+
 <div class="quotes">
 	<%= link_to "See Quotes", quotes_path %>
+</div>
+
+<div class = "rquote">
+	<p><%= @randomquote %></p>
 </div>
 
 <div class="books">
 	<%= link_to "Books", books_path %>
 </div>
 
-<tr>
+<div>
 <% Book.all.each do |book| %>
-	<td class = "bookscroll">
+	<div class = "bookscroll">
 		<h1><%= link_to book.title, book%></h1>
 		<p> <%=filepicker_image_tag book.filepicker_url, w:160, h:160, fit: 'clip' %> </p>
-	</td>
+	</div>
 <%end%>
-</tr>
+</div>
