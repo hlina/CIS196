@@ -30,6 +30,7 @@
 	<%end%>
 </p>
 
+<% if current_user.id? %>
 <p>
 	<% if !(Borrowed.find_by book_id: @book.id) %>
 		<%= form_for(@borrowed) do |f| %>
@@ -44,6 +45,7 @@
 		<%= "This book is out" %>
 	<%end%>
 </p>
+<%end%>
 
 <%= link_to 'Back', books_path %> 
 <%= link_to 'Edit', edit_book_path(@book) %>

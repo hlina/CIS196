@@ -1,4 +1,8 @@
-I added the Send Grid addon and a new controller called Borrowed. I also added a variable to the books table called available to represent if the user who posted teh book actually owns it and is willing to lend it. If a book is available to be lent, there will be a button in the book index called "Borrowed." If hte user requests to borrow the book, an email will be sent to the user who owns the book using SendGrid. Please ignore the strange styling for now. I am working on fixing that. Also error pages keep happening if you're not signed in first, so make sure you create an account and sign in. I am working on fixing that too.
+I added the Send Grid addon and a new controller called Borrowed. I also added a variable to the books table called available to represent if the user who posted teh book actually owns it and is willing to lend it. If a book is available to be lent, there will be a button in the book index called "Borrowed." If the user requests to borrow the book, an email will be sent to the user who owns the book using SendGrid. Please ignore the strange styling for now. I am working on fixing that. 
+
+Also error pages keep happening if you're not signed in and you try to hit the Books link or the individual Book titles to show individual books, so make sure you create an account and sign in before testing the Addon. I am working on fixing that too. 
+
+Actually I have looked into it. It is because I have added the schema/variable "Borrowed" to the book index and show, which requires a current_user.id, which would be nil without signing in. I tried adding an if statement for current_user.id != nil, but that's not working either. Since this didn't have to do with the current assignment with Addons specifically, I haven't had time to get help with this. I am only uploading to Github after the deadline now because I am editing my Readme on this bug.
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/
