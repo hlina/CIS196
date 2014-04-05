@@ -1,12 +1,22 @@
 <h1>Books</h1>
+
+<%=form_tag books_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <table>
 	<tr>
 		<td>Title</td>
+		<td> </td>
 		<td>Comments</td>
 		<td>Category</td>
 		<td>Date</td>
 		<td>Rating</td>
 		<td>Available to Borrow</td>
+		<td> </td>
 		<td>User</td>
 	</tr>
 
@@ -27,27 +37,37 @@
 			<%="I don't own it"%>
 			<%end%></td>
 
-		<% if current_user.id? %>
-			<% if !(Borrowed.find_by book_id: book.id) && book.available %>
+	<% if user_signed_in? %>
+	<% if !(Borrowed.find_by book_id: book.id) && book.available %>
 				<td> <%= form_for(@borrowed) do |f| %>
 					<div class = "field">
 					<%= f.hidden_field :user_id, :value => current_user.id %> </div>
 					<div class = "field">
 					<%= f.hidden_field :book_id, :value => book.id %> </div>
 					<div class= "actions">
-					<%= f.submit %> </div>
+					<%= f.submit "Borrow"%> </div>
 					<%end%>
 				</td>
 			<%else%>
 				<td> <%= "This book is out" %> </td>
-			<%end%>
 		<%end%>
+	<%end%>
 
 		<td><%= book.user.name unless book.user.nil?%></td>
+		
 		<td><%= link_to 'Show', book %></td>
-		<td><%= link_to 'Edit', edit_book_path(book) %></td>
-		<td><%= link_to 'Delete', book_path(book),
-                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	</tr>
+
+	<% if user_signed_in? %>
+
+		<% if @book.user_id = current_user.id %>
+			<td><%= link_to 'Edit', edit_book_path(@book) %></td>
+			<td><%= link_to 'Delete', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<%end%>
+
 	<%end%>
+	
+	</tr>
+
+	<%end%>
+
 </table>

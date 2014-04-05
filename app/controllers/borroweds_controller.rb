@@ -11,7 +11,7 @@ end
 def destroy
 		@borrowed = Borrowed.find(params[:id])
 		@borrowed.destroy
-		redirect_to users_path
+		redirect_to dashboard_path
 end
 
 def borrowed_params

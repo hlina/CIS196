@@ -16,12 +16,12 @@ class Notifications < ActionMailer::Base
     mail to: borrowed.book.user.email
   end
 
-  def followed(follower)
+  def followed(follow)
     @greeting = "Hi"
     @follower = follow.follower.name
-    @id = follower.follower_id
+    @id = follow.follower_id
 
-    mail to: follow.folowee.email
+    mail to: follow.followee.email
   end
   
 end

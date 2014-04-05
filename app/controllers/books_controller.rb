@@ -23,6 +23,7 @@ class BooksController < ApplicationController
 	def index
 		@books = Book.all
 		@borrowed = Borrowed.new
+		@books_s = Book.search(params[:search])
 	end
 
 	def show

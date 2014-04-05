@@ -30,7 +30,7 @@
 	<%end%>
 </p>
 
-<% if current_user.id? %>
+<% if user_signed_in? %>
 <p>
 	<% if !(Borrowed.find_by book_id: @book.id) %>
 		<%= form_for(@borrowed) do |f| %>
@@ -39,7 +39,7 @@
 			<div class = "field">
 			<%= f.hidden_field :book_id, :value => @book.id %> </div>
 			<div class= "actions">
-				<%= f.submit %> </div>
+				<%= f.submit "Borrow" %> </div>
 		<%end%>
 	<%else%>
 		<%= "This book is out" %>
@@ -48,4 +48,12 @@
 <%end%>
 
 <%= link_to 'Back', books_path %> 
+
+<% if user_signed_in? %>
+
+<% if @book.user_id = current_user.id %>
 <%= link_to 'Edit', edit_book_path(@book) %>
+<%= link_to 'Delete', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%>
+
+<%end%>
