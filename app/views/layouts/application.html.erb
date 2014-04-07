@@ -13,11 +13,11 @@
 	<div class="navbar">
 		<ul class="nav">
 			<div id="left">
-				<li class='nav-link home'><%= link_to "Home", home_index_path %></li>
-				<li class='nav-link users'><%= link_to "All Users", users_path %></li> 
+				<li class='nav-linkhome'><%= link_to "Home", home_index_path %></li>
+				<li class='nav-linkusers'><%= link_to "All Users", users_path %></li> 
 				<% if user_signed_in? %>
-				<li class='nav-link dash'><%= link_to "Dashboard", dashboard_path %></li>
-				<li class = 'nav-link search'><%= form_tag search_path, method: :post do %>
+				<li class='nav-linkdash'><%= link_to "Dashboard", dashboard_path %></li>
+				<li class = 'nav-linksearch'><%= form_tag search_path, method: :post do %>
    						 <%= text_field_tag :search%>
    						 <%= select_tag(:type, options_for_select([['title', "title"],['author', "author"],["body","body"],["email","email"],["name","name"]]))%>
   						  <%= submit_tag "Search"%></li>

@@ -59,13 +59,16 @@ ul{
 	float: right;
 }
 
-#left {
+#left a{
 	padding: 10px;
-	padding-top: 0px;
+	padding-top: 13px;
 	padding-bottom: 14px;
 	text-decoration:none;
 	color: #D7D7D7;
 	float: left;
 }
 
-
+.nav-linksearch{
+	padding: 8px;
+	float: left;
+}
