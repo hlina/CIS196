@@ -23,7 +23,11 @@ class BooksController < ApplicationController
 	def index
 		@books = Book.all
 		@borrowed = Borrowed.new
-		@books_s = Book.search(params[:search])
+	end
+
+	def cat_index
+		@books = Book.where(category: params[:cat])
+		render 'books/index'
 	end
 
 	def show
@@ -32,7 +36,11 @@ class BooksController < ApplicationController
 	end
 
 	def edit
-		@book = Book.find(params[:id])
+		if user_signed_in? && book.user_id == current_user.id
+			@book = Book.find(params[:id])
+		else
+			redirect_to books_path
+		end
 	end
 
 	def update
@@ -40,7 +48,6 @@ class BooksController < ApplicationController
 		if @book.user_id != current_user.id
 			render 'edit'
 		else
-
 			if @book.update(book_params)
 				redirect_to @book
 			else
@@ -50,15 +57,19 @@ class BooksController < ApplicationController
 	end
 
 	def destroy
-		@book = Book.find(params[:id])
-		@book.destroy
-		redirect_to books_path
+		if user_signed_in? && book.user_id == current_user.id
+			@book = Book.find(params[:id])
+			@book.destroy
+			redirect_to books_path
+		else
+			redirect_to books_path
+		end
 	end
 
 	private
 
 	def book_params
-		params.require(:book).permit(:title, :filepicker_url, :body, :category, :date, :rating, :user_id, :available)
+		params.require(:book).permit(:title, :author, :filepicker_url, :body, :category, :rating, :user_id, :available)
 	end
 
 end

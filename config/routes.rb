@@ -7,7 +7,13 @@ HW4::Application.routes.draw do
   resources :followers, only: [:create, :destroy]
   resources :borroweds
 
-  get"dashboard", to: "users#dash"
+  get "dashboard", to: "users#dash"
+  
+
+  post "search", to: "application#search"
+  get "books/category/:cat", to: "books#cat_index", as: "cat_books"
+  get "quotes/category/:cat", to: "quotes#cat_index", as: "cat_quotes"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

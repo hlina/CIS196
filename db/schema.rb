@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324160755) do
+ActiveRecord::Schema.define(version: 20140407181751) do
 
   create_table "books", force: true do |t|
     t.string   "title"
     t.text     "body"
     t.string   "category"
     t.integer  "user_id"
-    t.date     "date"
     t.float    "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "filepicker_url"
     t.boolean  "available"
+    t.string   "author"
   end
 
   add_index "books", ["user_id"], name: "index_books_on_user_id"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20140324160755) do
   create_table "borrowed", force: true do |t|
     t.integer  "user_id"
     t.integer  "book_id"
-    t.string   "lender"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

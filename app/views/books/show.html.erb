@@ -1,7 +1,6 @@
 <p>
 	<strong>Title</strong>
-	<%= @book.title %>
-	
+	<%= @book.title %> by <%= @book.author %>
 	<%= filepicker_image_tag @book.filepicker_url, w: 160, h: 160, fit: 'clip' %>
 
 </p>
@@ -49,11 +48,8 @@
 
 <%= link_to 'Back', books_path %> 
 
-<% if user_signed_in? %>
-
-<% if @book.user_id = current_user.id %>
+<% if @book.user_id == current_user.id %>
 <%= link_to 'Edit', edit_book_path(@book) %>
 <%= link_to 'Delete', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %>
 <%end%>
 
-<%end%>

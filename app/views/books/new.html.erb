@@ -18,6 +18,11 @@
 	<%=f.text_field :title%>
 </div>
 
+<div class="field">
+	<p>Author</p>
+	<%= f.text_field :author %>
+</div>
+
  <div class= "field">
     <%= f.label :filepicker_url, "Upload Book Image:" %>
     <%= f.filepicker_field :filepicker_url %>
@@ -27,14 +32,10 @@
 	<p>Comments</p>
 	<%= f.text_area :body %>
 </div>
-<div class="field">
-	<p>Genre</p>
-	<%= f.text_field :category %>
-</div>
 
 <div class="field">
-	<p>Date Finished</p>
-	<%= f.text_field :date %>
+	<p>Genre</p>
+	<%= f.select :category, options_for_select(["Action","Classic","Educational","Fantasy","Religious","Romance","Self-Help","Suspense"]) %>
 </div>
 
 <div class="field">

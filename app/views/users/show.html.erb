@@ -12,6 +12,7 @@
 	<% @books.each do |book| %>
 		<div class= "dash-review">
 			<h2><%= link_to book.title, book_path(book.id)%></h2>
+			<td><%= filepicker_image_tag book.filepicker_url, w:160, h:160, fit: 'clip' %></td>
 			<h5><%= book.user.name %></h5>
 			<p><%= book.body%></p>
 		</div>
@@ -19,5 +20,4 @@
 </div>
 
 <%= link_to 'Back', users_path %> 
-<%= link_to 'Edit', edit_user_path(@user) %>
 

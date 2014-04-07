@@ -1,4 +1,15 @@
 <h1>Quotes</h1>
+
+<ul>
+	<li><%= link_to "Encouragement", cat_quotes_path("Encouragement")%></li>
+	<li><%= link_to "Future", cat_quotes_path("Future")%></li>
+	<li><%= link_to "Humour", cat_quotes_path("Humour")%></li>
+	<li><%= link_to "Inspirational", cat_quotes_path("Inspirational")%></li>
+	<li><%= link_to "Relationships", cat_quotes_path("Relationships")%></li>
+	<li><%= link_to "Religious", cat_quotes_path("Religious")%></li>
+	<li><%= link_to "Romantic", cat_quotes_path("Romantic")%></li>
+</ul>
+
 <table>
 	<tr>
 		<td>Quote</td>
@@ -11,9 +22,13 @@
 		<td><%= quote.category %></td>
 		<td><%= quote.user.name unless quote.user.nil? %></td>
 		<td><%= link_to 'Show', quote %></td>
+
+		<% if quote.user_id == current_user.id %>
 		<td><%= link_to 'Edit', edit_quote_path(quote) %></td>
 		<td><%= link_to 'Delete', quote_path(quote),
                     method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+
 	</tr>
 	
 	<%end%>

@@ -10,6 +10,10 @@ class FollowersController < ApplicationController
 		end
 	end
 
+	def index
+		@follower = Follower.order(follower_id: :asc)
+	end
+
 	def destroy
 		@follower = Follower.find(params[:id])
 		@follower.destroy

@@ -1,10 +1,11 @@
-I added the Send Grid addon and a new controller called Borrowed. I also added a variable to the books table called available to represent if the user who posted teh book actually owns it and is willing to lend it. If a book is available to be lent, there will be a button in the book index called "Borrowed." If the user requests to borrow the book, an email will be sent to the user who owns the book using SendGrid. Please ignore the strange styling for now. I am working on fixing that. 
+Queries:
+1) Condition-- I added a search bar to application views using a where query in the application controller, new method called search.
+2) Limit--I added a limit query in the homes controller, index method so that only the first 5 books will show up at once.
+3) Order--I added an order query in the followers controller, index method so that the followers would display alphabetically in the "All Users" view.
+4) Order--I added an order query in the users controller, index method so that the users would display in ascending order by  name.
 
-Also error pages keep happening if you're not signed in and you try to hit the Books link or the individual Book titles to show individual books, so make sure you create an account and sign in before testing the Addon. I am working on fixing that too. 
-
-Actually I have looked into it. It is because I have added the schema/variable "Borrowed" to the book index and show, which requires a current_user.id, which would be nil without signing in. I tried adding an if statement for current_user.id != nil, but that's not working either. Since this didn't have to do with the current assignment with Addons specifically, I haven't had time to get help with this. I am only uploading to Github after the deadline now because I am editing my Readme on this bug.
+While doing this assignment, I faced the challenge of creating the search bar, but eventually we went over it in recitation. I also struggled to have the dashboard show the books the user is lending out, since the borrowed schema only has the variable for the user who is borrowing the book. I eventually worked this out. Finally, I did a lot of testing to make sure the website still worked well even when not signed in. I had to take out the dashboard, make sure not any one could just unfollow people, and take out edit links.
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/
 
-*Note the "Books" and "See Quotes" on the home page are links. 

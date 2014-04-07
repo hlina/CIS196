@@ -26,6 +26,11 @@ class QuotesController < ApplicationController
 		@quotes = Quote.all
 	end
 
+	def cat_index
+		@quotes = Quote.where(category: params[:cat])
+		render 'quotes/index'
+	end
+
 	def show
 		@quote = Quote.find(params[:id])
 	end
@@ -49,9 +54,14 @@ class QuotesController < ApplicationController
 	end
 
 	def destroy
+	if user_signed_in? && quote.user_id == current_user.id
 		@quote = Quote.find(params[:id])
 		@quote.destroy
 		redirect_to quotes_path
+	else
+		redirect_to quotes_path
+	end
+
 	end
 	
  	private

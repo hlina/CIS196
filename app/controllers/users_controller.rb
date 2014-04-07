@@ -12,14 +12,12 @@ class UsersController < ApplicationController
 		end
 	end
 
-	#private
-
 	def user_params
 		params.require(:user).permit(:name, :email, :password)
 	end
 
 	def index
-		@users=User.all
+		@users=User.order(name: :asc)
 	end
 	
 	def show
@@ -62,7 +60,7 @@ class UsersController < ApplicationController
 				if lend.book.user_id == current_user.id
 					@lent_book.push(lend.book)
 				end
-			end
+				end
 			end
 			@borrowed = Borrowed.where(user_id: current_user.id) 
 			@books = Book.where(user_id: @follower_id).order(created_at: :desc).limit(5)

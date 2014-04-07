@@ -4,12 +4,10 @@
 
 <h3> Following </h3>
 	<% @followers.each do |follow| %>
-		<tr>
-			<td> <%= follow.followee.name %> </td>
-		</tr>
+		<p> <%= follow.followee.name %> </p>
 	<%end%>
 
-<h2>Out</h2>
+<h3>Out</h3>
 	<% @lent_book.each do |lent| %>
 		<tr>
 			<td><%= lent.title%></td>
@@ -18,7 +16,7 @@
 		</tr>
 	<%end%>
 
-<h2>Borrowing</h2>
+<h3>Borrowing</h3>
 	<% @borrowed.each do |borrowed| %>
 		<tr>
 			<td><%= borrowed.book.title unless borrowed.book.nil? %></td>
@@ -34,6 +32,7 @@
 	<% @books.each do |book| %>
 		<div class = "dash-review">
 			<h2><%= link_to book.title, book_path(book.id) %></h2>
+			<td><%= filepicker_image_tag book.filepicker_url, w:160, h:160, fit: 'clip' %></td>
 			<h5><%= link_to book.user.name, user_path(book.user_id) %></h5>
 			<p><%= book.body %><p>
 		</div>
@@ -42,9 +41,8 @@
 	<h3> Quotes </h3>
 	<% @quotes.each do |quote| %>
 		<div class = "dash-review">
-			<h2><%= link_to quote.body, quote_path(quote.id) %></h2>
+			<p><%= quote.body %></p>
 			<h5><%= link_to quote.user.name, user_path(quote.user_id) %></h5>
-			<p><%= quote.body %><p>
 		</div>
 	<%end%>
 
