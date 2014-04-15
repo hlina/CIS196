@@ -1,23 +1,28 @@
+<div class = "wrap">
+<div class = "rquote">
+	<p><%= @randomquote %></p>
+</div>
+</div>
 
 <div class="quotes">
 	<%= link_to "See Quotes", quotes_path %>
-</div>
-
-<div class = "rquote">
-	<p><%= @randomquote %></p>
 </div>
 
 <div class="books">
 	<%= link_to "Books", books_path %>
 </div>
 
-<div>
+<div class= "wrapper">
+<div id="bookline">
+	<ul>
 <% @books.each do |book| %>
 	<div class = "bookscroll">
 		<li>
-		<h1><%= link_to book.title, book%></h1>
-		<p> <%=filepicker_image_tag book.filepicker_url, w:160, h:160, fit: 'clip' %> </p>
+			<p> <%=filepicker_image_tag book.filepicker_url, w:160, h:160, fit: 'clip' %> </p>
+			<h1><%= link_to book.title, book%></h1>
 		</li>
 	</div>
 <%end%>
+</ul>
+</div>
 </div>

@@ -1,6 +1,6 @@
 <div>
 	<p>
-		<strong>name</strong>
+		<strong>Name</strong>
 		<%= @user.name %>
 	</p>
 
@@ -9,15 +9,31 @@
 		<%= @user.email %>
 	</p>
 
+<ul class="categories">
+	<li id= "cat"><%= link_to "Action", cat_books_path("Action")%></li>
+	<li id= "cat"><%= link_to "Classic", cat_books_path("Classic")%></li>
+	<li id= "cat"><%= link_to "Educational", cat_books_path("Educational")%></li>
+	<li id= "cat"><%= link_to "Fantasy", cat_books_path("Fantasy")%></li>
+	<li id= "cat"><%= link_to "Religious", cat_books_path("Religious")%></li>
+	<li id= "cat"><%= link_to "Romance", cat_books_path("Romance")%></li>
+	<li id= "cat"><%= link_to "Self-Help", cat_books_path("Self-Help")%></li>
+	<li id= "cat"><%= link_to "Suspense", cat_books_path("Suspense")%></li>
+	<li id= "cat"><%= link_to "To Read", cat_books_path("To Read")%></li>
+</ul>
+
 	<% @books.each do |book| %>
+	<div class="bookbox">
 		<div class= "dash-review">
-			<h2><%= link_to book.title, book_path(book.id)%></h2>
+			<h3><%= link_to book.title, book_path(book.id)%></h2>
 			<td><%= filepicker_image_tag book.filepicker_url, w:160, h:160, fit: 'clip' %></td>
 			<h5><%= book.user.name %></h5>
 			<p><%= book.body%></p>
 		</div>
+	</div>
 	<%end%>
+
+	<%= link_to 'Back', users_path %> 
+
 </div>
 
-<%= link_to 'Back', users_path %> 
 

@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 has_many :books, :dependent => :destroy
 has_many :quotes, :dependent => :destroy
-has_many :followers, :dependent => :destroy
+has_many :followers, foreign_key: :follower_id, :dependent => :destroy
+has_many :followers, foreign_key: :followee_id, :dependent => :destroy
 
 end
 

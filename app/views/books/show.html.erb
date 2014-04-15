@@ -1,8 +1,13 @@
+<%= filepicker_image_tag @book.filepicker_url, w: 160, h: 160, fit: 'clip' %>
+
 <p>
 	<strong>Title</strong>
-	<%= @book.title %> by <%= @book.author %>
-	<%= filepicker_image_tag @book.filepicker_url, w: 160, h: 160, fit: 'clip' %>
+	<%= @book.title %>
+</p>
 
+<p>
+	<strong>Author</strong>
+	<%= @book.author %>
 </p>
 
 <p>

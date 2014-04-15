@@ -13,45 +13,44 @@
 	<div class="navbar">
 		<ul class="nav">
 			<div id="left">
-				<li class='nav-linkhome'><%= link_to "Home", home_index_path %></li>
-				<li class='nav-linkusers'><%= link_to "All Users", users_path %></li> 
-				<% if user_signed_in? %>
-				<li class='nav-linkdash'><%= link_to "Dashboard", dashboard_path %></li>
-				<li class = 'nav-linksearch'><%= form_tag search_path, method: :post do %>
+				<li class = 'nav-linksearch'>
+					<%= form_tag search_path, method: :post do %>
    						 <%= text_field_tag :search%>
-   						 <%= select_tag(:type, options_for_select([['title', "title"],['author', "author"],["body","body"],["email","email"],["name","name"]]))%>
-  						  <%= submit_tag "Search"%></li>
-				<% end %>
-				<%end%>
-
+   						 <%= select_tag(:type, options_for_select([['title', "title"],['author', "author"],['quotes',"body"],["email","email"],["name","name"]]))%>
+  						 <%= submit_tag "Search", :class => "hide"%></li>
+					<% end %>
+				<li class = 'nav-link'><%= link_to "HOME", home_index_path %></li>
 			</div>
 
 			<div id="right">
-				<% if user_signed_in? %>
-				<li class='nav-link'><%= link_to "Edit Profile", edit_user_registration_path %></li>
+				<% if user_signed_in? %> 
+				<ul>
+					<li class = 'dropdown'><a class = 'nav-link' href='#'><%current_user.id%></a></li>
+					<ul>
+						<li class = 'nav-link'><%= link_to "DASHBOARD", dashboard_path %></li>
+						<li class = 'nav-link'><%= link_to "USERS", users_path %></li> 
+						<li class = 'nav-link'><%= link_to "EDIT PROFILE", edit_user_registration_path %></li>
+						<li class = 'nav-link'><%=link_to('LOGOUT', destroy_user_session_path(:authenticity_token => form_authenticity_token()), :method => :delete) %></li>
+					</ul>
+
+					<li class='nav-link'><%= link_to "+BOOKS", new_book_path %></li>
+					<li class='nav-link'><%= link_to "+QUOTES", new_quote_path %></li>
+				</ul>
+
+				<% else %> 
+				<li class = 'nav-link'><%=link_to('LOGIN', new_user_session_path) %></li>
+
 				<%end%>
-				
-				<li class='nav-link'><%= link_to "+Books", new_book_path %></li>
-				<li class='nav-link'><%= link_to "+Quotes", new_quote_path %></li>
-				<% if !user_signed_in? %> 
-				<li> 
-					<%=link_to('Login', new_user_session_path) %>
-				</li>
-				
-				<%else%>
-				<li>
-					<%=link_to('Logout', destroy_user_session_path(:authenticity_token => form_authenticity_token()), :method => :delete) %>
-				</li>
-				<%end%>
+
 			</div>
 		</ul>
 	</div>
 <p class="notice"><%=notice%></p>
 <p class="alert"><%=alert%></p>
 
-	<div class="content">
-	<%= yield %>
-	</div>
+<div class="content">
+<%= yield %>
+</div>
 
 </body>
 </html>

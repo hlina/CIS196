@@ -2,12 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.book {
-	border: 3px solid #505050;
-	height: 200px;
-	position: relative;
+.bookbox{
+	background-color: white;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+	display: inline-block;
+	float: center;
+	width:275px;
+	height:400px;
+	margin: 15px;
+	border-radius: 5px;
 }
 
-.links {
-	z-index:1;
+.categories{
+	position:relative;
+}
+
+.categories li{
+	display:inline;
 }
