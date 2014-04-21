@@ -13,42 +13,34 @@
  */
 
 body{
-	background-color: #f3f3ea;
+	background-color: #DDFFF8;
 	margin: 0;
 	padding: 0;
 	line-height: 17px;
 	font-family: Helvetica;
 	font-size: 13px;
-	scrollbar-3dlight-color:skyblue;
-	scrollbar-arrow-color:#001155;
-	scrollbar-base-color:#033000;
-	scrollbar-darkshadow-color:#000d00;
-	scrollbar-face-color:skyblue;
-	scrollbar-highlight-color:#0d0000;
-	scrollbar-track-color:#f00000;
-	scrollbar-shadow-color:#22d000
 }
 
 .content{
-	position: relative;
-	width: 974px;
+	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 10px;
-	z-index:1;
+	z-index: 1;
+	background-color: #FCFCFC;
 }
 
 .hide{
 	display:none;
 }
 
-
-//NAVBAR
-.nav{	
-	position: relative;
-	top:0;
-	width: 100%;
+.navbar {
+	background-color: #FCFCFC;
+	width: 1200px;
 	height: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
 }
 
 ul{
@@ -58,22 +50,58 @@ ul{
 }
 
 .nav li{
+	position: relative;
 	display: inline;
 	font-size: 16px;
 }
 
 #right a{
-	padding: 15px;
-	padding-top: 15px;
 	text-decoration:none;
 	color: black;
+}
+
+#right li{
 	float: right;
+	padding: 10px;
+}
+
+.dropdown ul{
+   display: none; 
+   width: 9em;
+}
+
+.dropdown:hover ul {
+  position: absolute;
+  display: block;
+  top: 40px;
+  right: 0px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  z-index: 5;
+}
+
+.dropdown nav-link{
+	position: absolute;
+	display: block;
+	float: left; 
+	list-style-type: none;
+	padding: 5px;
+}
+
+.dropdown nav-link a{
+	text-align: left;
+	text-decoration: none;
+	float: left;
+	padding: 5px 10px 5px;
+	color: black;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #282828;
 }
 
 #left a{
 	position: relative;
-	padding: 15px;
-	padding-top: 15px;
+	padding: 10px;
 	float: left;
 	text-decoration: none;
 }
@@ -106,34 +134,3 @@ ul{
     transition: all 0.7s ease 0s;
 }
 
-.dropdown ul{
-   display: none; 
-   width: 10em;
-}
-
-.dropdown:hover ul{
-	position:absolute;
-	display: block;
-	top:42px;
-	margin: 0;
-	padding: 0;
-	z-index: 5;
-}
-
-.dropdown nav-link{
-	display: block;
-	float: none; 
-	list-style-type: none;
-	background-color: white;
-	padding: 5px;
-}
-
-.dropdown nav-link a{
-	text-align: left;
-	text-decoration: none;
-	float: none;
-	padding: 10px 15px 10px;
-	color: black;
-	text-decoration: none;
-	text-shadow: 0 1px 0 #282828;
-}

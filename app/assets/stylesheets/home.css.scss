@@ -1,16 +1,16 @@
-.quotes a{
-	top: 60px;
-	left: 750px;
-	float: right;
-	text-decoration: none;
-	position: absolute;
-}
-
 .rquote p{
 	position: relative;
 	font-size: 38px;
 	line-height: 38px;
 	text-align: center;
+}
+
+.quotes a{
+	position: relative;
+	float: right;
+	text-decoration: none;
+	right: 150px;
+	bottom: 100px;
 }
 
 .wrap{
@@ -19,17 +19,16 @@
 	}
 
 .books a{
-	position: fixed;
-	width: 900px;
-	top: 400px;
-	left: 100px;
+	position: relative;
+	bottom: 30px;
 	text-decoration: none;
 	font-size: 38px;
+	left: 50px;
 }
 
 .bookscroll {
 	position: relative;
-	height: 200px;
+	bottom: 0px;
 	margin: 5 px 5px;
 	display: inline;
 }

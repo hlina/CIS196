@@ -2,6 +2,7 @@ $(function(){
 	centerQuote();
 	centerBookline();
 	centerWrapper();
+	fullContent();
 
 	function centerQuote(){
 		var wrapWidth = $(".wrap").width();
@@ -25,5 +26,10 @@ $(function(){
 		var docWidth = $(".content").width();	
 		var marg = (docWidth - wrapperWidth)/2;
 		$(".wrapper").css({"margin-left": marg, "margin-right":marg});
+	}
+
+	function fullContent(){
+		var docHeight = $(document).height();
+		$(".content").height(docHeight);
 	}
 });
