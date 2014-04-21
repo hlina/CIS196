@@ -2,7 +2,7 @@ JavaScript:
 I used JavaScript for the home views. I added a function that centers my bookscroll wrapper at the bottom of the page, and a function that would center the random quote. That way, no matter the length of the quote displayed, the quote will still be centered. Lastly I made a function that adjusts the scrollbar according to how many books are currently in view.
 
 I had trouble with centering the bookscroll and the quote using just CSS, which is why I turned to Javascript!
-I also, if you may have noticed, have worked very hard on styling since last homework.
+I also, if you may have noticed, have worked very hard on styling since last homework. However, I'm still having some issues, which I hope to finish when I finally submit the entire project.
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/
