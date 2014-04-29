@@ -2,7 +2,127 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.bookbox a{
-	decoration: none;
-	font-size: 12px;
+.users p{
+	position: relative;
+	font-size:30px;
+	font-weight: bold;
+	width: 200px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#label{
+	padding-top:10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 698px;
+	text-align: left;
+}
+
+#label li{
+	text-decoration: none;
+	display: inline;
+	font-weight: bold;
+	margin-right: 110px;
+}
+
+.table{
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*dashboard*/
+
+.dash p{
+	position: relative;
+	width: 500px;
+	font-size:30px;
+	font-weight: bold;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h2{
+	position: relative;
+	width: 250px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.selfinfo{
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.selfbox{
+	display: inline-block;
+	float: center;
+	width:275px;
+	height:400px;
+}
+
+.selfbox ul{
+	list-style: none;
+} 
+
+.selfbox p{
+	text-align: center;
+}
+
+.dashelements{
+	width:1380px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.dashbooks{
+	background-color: white;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+	display: inline-block;
+	float: center;
+	width:275px;
+	height:400px;
+	border-radius: 5px;
+	margin: 21px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#title{
+	text-align: center;
+	font-size: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: bold;
+}
+
+#image{
+	width: 192px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dashquotes{
+	background-color: white;
+	-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	width: 400px;
+	height: 150px;
+	margin: 15px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.dashquotes p{
+	font-size: 15px;
 }

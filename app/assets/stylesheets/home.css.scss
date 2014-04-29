@@ -3,27 +3,32 @@
 	font-size: 38px;
 	line-height: 38px;
 	text-align: center;
+	padding: 15px;
+	width: 65%;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 10px;
 }
 
 .quotes a{
 	position: relative;
 	float: right;
 	text-decoration: none;
-	right: 150px;
+	right: 160px;
 	bottom: 100px;
+	color: black;
 }
 
 .wrap{
 	position: relative;
 	height: 250px;
-	}
+}
 
 .books a{
 	position: relative;
 	bottom: 30px;
-	text-decoration: none;
 	font-size: 38px;
-	left: 50px;
+	left: 160px;
 }
 
 .bookscroll {
@@ -33,11 +38,10 @@
 	display: inline;
 }
 
-.bookscroll a{
+.bookscroll h1{
 	font-size: 16px;
-	text-decoration: none;
-	color: black;
-	padding: 2px;
+	width: 120px;
+	text-align: center;
 }
 
 #bookline{
@@ -46,15 +50,17 @@
 	margin-right: 10px;
 }
 
-
 .wrapper{
 	bottom: 0;
 	width: 1100px;
+	padding-left: 5px;
+	padding-right: 5px;
 	overflow-x: auto;
 	overflow-y: hidden;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
     -webkit-border-radius: 10px;
     border-radius: 10px;
+    background-color: rgba(245, 253, 253, 0.7);
 }
 
 

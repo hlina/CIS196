@@ -1,4 +1,6 @@
-<h1>Books</h1>
+<div class="bookt">
+<p>Books</p>
+</div>
 
 <ul class="categories">
 	<li id= "cat"><%= link_to "Action", cat_books_path("Action")%></li>
@@ -12,25 +14,19 @@
 	<li id= "cat"><%= link_to "To Read", cat_books_path("To Read")%></li>
 </ul>
 
+<div class = "books">
 	<% @books.each do |book| %>
 	<div class="bookbox">
-		<strong class = "center"><%= book.title%></strong>
-		<p class = "center"><%= book.author%></p>
+		<p id = "title"><%= book.title%></p>
 		<% if !book.filepicker_url.nil?%>
-		<td><%= filepicker_image_tag book.filepicker_url, w:160, h:160, fit: 'clip' %></td>
+		<p id = "image"><%= filepicker_image_tag book.filepicker_url, w:285, h:285, fit: 'clip' %></p>
 		<%end%>
 
-		<p class = "center"><%= book.body%></p>
-		<p class = "center"><%= book.category%> rating: <%= book.rating%>
-		<% if book.available%>
-			<%="I own it"%>
-			<%else%>
-			<%="I don't own it"%>
-			<%end%></p>
+		<p id = "rates">Genre: <%= book.category%> ~Rating: <%= book.rating%> 
 
-	<% if user_signed_in? %>
-	<% if !(Borrowed.find_by book_id: book.id) && book.available && !@borrowed.nil?%>
-				<td> <%= form_for(@borrowed) do |f| %>
+		<% if user_signed_in? %>
+		<% if !(Borrowed.find_by book_id: book.id) && book.available && !@borrowed.nil?%>
+				<%= form_for(@borrowed) do |f| %>
 					<div class = "field">
 					<%= f.hidden_field :user_id, :value => current_user.id %> </div>
 					<div class = "field">
@@ -38,21 +34,20 @@
 					<div class= "actions">
 					<%= f.submit "Borrow"%> </div>
 					<%end%>
-				</td>
 			<%else%>
-				<td> <%= "This book is out" %> </td>
+				<%= "Out" %></p>
 		<%end%>
 	<%end%>
 
-		<p class = "center"><%= book.user.name unless book.user.nil?%>
-		
-		<%= link_to 'Show', book %>
-		
+		<p id="details"><%= book.user.name unless book.user.nil?%>		
+		<%= link_to '~Show', book %>
 		<% if book.user_id == current_user.id %>
 			<%= link_to 'Edit', edit_book_path(book) %>
 			<%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></p>
 		<%end%>
+
 	</div>
 
 	<%end%>
+</div>
 

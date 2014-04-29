@@ -1,3 +1,5 @@
+<div class="newbook">
+	
 <%= form_for(@book) do |f| %> <!--Do I need to add a url here?-->
 
 <% if @book.errors.any? %>
@@ -39,7 +41,7 @@
 </div>
 
 <div class="field">
-	<p>Rating</p>
+	<p>Rating Out of 10</p>
 	<%= f.text_field :rating %>
 </div>
 
@@ -58,3 +60,5 @@
 
 <%end%>
 <%= link_to 'See All Books', books_path %>
+
+</div>

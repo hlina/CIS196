@@ -2,23 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.qtitle p{
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 200px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 30px;
+}
+
 .categories{
 	position:relative;
 }
 
 .categories li{
 	display:inline;
-	
 }
 
 .categories a{
 	text-decoration: none;
 	margin: 5px;
+	color: black;
 }
 
 .quotebox{
 	background-color: white;
-	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 	display: inline-block;
@@ -32,6 +42,21 @@
 .qbody{
 	font-size: 18px;
 	text-align: center;
-	margin: 10px;
+}
+
+.info{
+	margin-left: 220px;
+	top: 77px;
+	position: relative;
+}
+
+.newquotes{
+	margin-top: 50px;
+	padding: 10px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: double;
+  	background-color: rgba(245, 253, 253, 0.7);
 }
 

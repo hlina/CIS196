@@ -13,37 +13,47 @@
  */
 
 body{
-	background-color: #DDFFF8;
+	background-color: rgba(255, 255, 255, 0.7);
 	margin: 0;
 	padding: 0;
 	line-height: 17px;
 	font-family: Helvetica;
 	font-size: 13px;
+	overflow-x: hidden;
 }
 
 .content{
-	width: 1200px;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 0px;
 	padding: 10px;
 	z-index: 1;
-	background-color: #FCFCFC;
 }
 
 .hide{
 	display:none;
 }
 
+a{
+	color: black;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+	color: purple;
+}
+
 .navbar {
-	background-color: #FCFCFC;
-	width: 1200px;
+	width: 100%;
 	height: 60px;
-	margin-left: auto;
 	margin-right: auto;
-	padding: 10px;
-	padding-top: 20px;
-	padding-bottom: 10px;
-	position: relative;
+	margin-bottom: auto;
+	padding-top: 22px;
+	background-image: url(http://static.tumblr.com/74cea5fc5ed930b53b4864f5eb6231e0/q0ukfqe/96smyy8wi/tumblr_static_stripes.jpg);
+	border-bottom: 15px solid #FCFCFC;
+	box-shadow: 5px 5px 2px #888888;
 }
 
 ul{
@@ -61,6 +71,8 @@ ul{
 #right a{
 	text-decoration:none;
 	color: black;
+	font-weight:bold;
+	margin-right: 15px;
 }
 
 #right li{
@@ -70,18 +82,19 @@ ul{
 
 .dropdown ul{
    display: none; 
-   width: 9em;
+   width: 10em;
 }
 
 .dropdown:hover ul {
   position: absolute;
   display: block;
-  top: 40px;
+  top: 38px;
   right: 0px;
   float: left;
   margin: 0;
   padding: 0;
   z-index: 5;
+  background-color: rgba(245, 253, 253, 0.7);
 }
 
 .dropdown nav-link{
@@ -107,13 +120,17 @@ ul{
 	padding: 10px;
 	float: left;
 	text-decoration: none;
+	color: black;
+	font-weight:bold;
+
 }
 
 .nav-linksearch {
 	position: relative;
 	padding: 15px;
-	padding-top: 10px;
+	padding-top: 7px;
 	float: left;
+	margin-left: 5px;
 }
 
 .nav-linksearch input[type="text"]{

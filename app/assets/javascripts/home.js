@@ -2,7 +2,7 @@ $(function(){
 	centerQuote();
 	centerBookline();
 	centerWrapper();
-	fullContent();
+	heightSelfBox();
 
 	function centerQuote(){
 		var wrapWidth = $(".wrap").width();
@@ -28,8 +28,11 @@ $(function(){
 		$(".wrapper").css({"margin-left": marg, "margin-right":marg});
 	}
 
-	function fullContent(){
-		var docHeight = $(document).height();
-		$(".content").height(docHeight);
+	function heightSelfBox(){
+		var liHeight = $(".selfbox li").height();
+		var count = $(".selfbox li").size();
+		var height = count*17;
+		$(".selfbox").height(height);
 	}
+
 });

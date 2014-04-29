@@ -1,4 +1,6 @@
-<h1>Quotes</h1>
+<div class="qtitle">
+<p>Quotes</p>
+</div>
 
 <ul class="categories">
 	<li><%= link_to "Encouragement", cat_quotes_path("Encouragement")%></li>
@@ -13,9 +15,9 @@
 	<% @quotes.each do |quote| %>
 	<div class="quotebox">
 		<p class = "qbody"><%= quote.body %></p>
-		<p><%= quote.category %>
-		<%= quote.user.name unless quote.user.nil? %></p>
-		<p><%= link_to 'Show', quote %>
+		<p class ="info"><%= quote.category %>
+		<%= quote.user.name unless quote.user.nil? %>
+		<%= link_to 'Show', quote %>
 
 		<% if quote.user_id == current_user.id %>
 		<%= link_to 'Edit', edit_quote_path(quote) %>

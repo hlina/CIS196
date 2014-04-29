@@ -1,49 +1,76 @@
-<h2><%= @user.name%>'s Dashboard</h2>
+<div class="dash">
+<p><%= @user.name%>'s Dashboard</p> 
+</div>
 
-<div>
-
-<h3> Following </h3>
+<div class="selfinfo">
+<div class="selfbox">
+<h2> Following </h2>
+	<ul>
 	<% @followers.each do |follow| %>
+	<li>
+	
 		<p> <%= follow.followee.name %> </p>
-	<%end%>
 
-<h3>Out</h3>
+	</li>
+		<%end%>
+	</ul>
+</div>
+
+<div class="selfbox">
+<h2>Out</h2>
+	<ul>
 	<% @lent_book.each do |lent| %>
-		<tr>
-			<td><%= lent.title%></td>
-			<td><%= link_to 'Returned', Borrowed.where(book: lent).take!,
-                method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		</tr>
+	<li>
+		<p><%= lent.title%>
+		<%= link_to 'Returned', Borrowed.where(book: lent).take!,
+           method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	</li>
 	<%end%>
+	</ul>
+</div>
 
-<h3>Borrowing</h3>
+<div class="selfbox">
+<h2>Borrowing</h2>
+	<ul>
 	<% @borrowed.each do |borrowed| %>
-		<tr>
-			<td><%= borrowed.book.title unless borrowed.book.nil? %></td>
-		</tr>
+	<li>
+		<p><%= borrowed.book.title unless borrowed.book.nil? %></p>
+	</li>
 	<%end%>
-
-
+	</ul>
+</div>
 
 </div>
 
-<div>
-	<h3> Books </h3>
+<div class="dashelements">
+	<h2 class = "books"> Books </h2>
 	<% @books.each do |book| %>
-		<div class = "dash-review">
-			<h2><%= link_to book.title, book_path(book.id) %></h2>
-			<td><%= filepicker_image_tag book.filepicker_url, w:160, h:160, fit: 'clip' %></td>
-			<h5><%= link_to book.user.name, user_path(book.user_id) %></h5>
-			<p><%= book.body %><p>
-		</div>
+	<div class = "dashbooks">
+		<p id="title"><%= link_to book.title, book_path(book.id) %></p>
+		<p id="image"><%= filepicker_image_tag book.filepicker_url, w:285, h:285, fit: 'clip' %></td>
+		<p id = "rates"> Genre: <%= book.category%> ~Rating: <%= book.rating%> ~Availability:
+		
+		<% if book.available%>
+			<%="I own it"%>
+			<%else%>
+			<%="I don't own it"%></p>
+			<%end%> 
+
+		<p><%= link_to book.user.name, user_path(book.user_id) %>
+		<%= link_to '~Show', book %>
+		<% if book.user_id == current_user.id %>
+			<%= link_to 'Edit', edit_book_path(book) %>
+			<%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+		<%end%>
+	</div>
 	<%end%>
 
-	<h3> Quotes </h3>
+	<h2 class = "quotes"> Quotes </h2>
 	<% @quotes.each do |quote| %>
-		<div class = "dash-review">
-			<p><%= quote.body %></p>
-			<h5><%= link_to quote.user.name, user_path(quote.user_id) %></h5>
-		</div>
+	<div class = "dashquotes">
+		<p><%= quote.body %></p>
+		<h5><%= link_to quote.user.name, user_path(quote.user_id) %></h5>
+	</div>
 	<%end%>
 
 </div>
