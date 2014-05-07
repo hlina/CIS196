@@ -3,13 +3,13 @@
 </div>
 
 <div class="selfinfo">
+
 <div class="selfbox">
 <h2> Following </h2>
 	<ul>
 	<% @followers.each do |follow| %>
 	<li>
-	
-		<p> <%= follow.followee.name %> </p>
+		<p><%= follow.followee.name %></p>
 
 	</li>
 		<%end%>

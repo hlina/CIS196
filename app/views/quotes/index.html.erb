@@ -15,9 +15,9 @@
 	<% @quotes.each do |quote| %>
 	<div class="quotebox">
 		<p class = "qbody"><%= quote.body %></p>
-		<p class ="info"><%= quote.category %>
+		<p class ="info"><%= quote.category%>~
 		<%= quote.user.name unless quote.user.nil? %>
-		<%= link_to 'Show', quote %>
+		<%= link_to '~Show', quote %>
 
 		<% if quote.user_id == current_user.id %>
 		<%= link_to 'Edit', edit_quote_path(quote) %>

@@ -1,6 +1,15 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.users{
+	margin-top: 50px;
+	padding: 10px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: double;
+  	background-color: rgba(245, 253, 253, 0.7);
+}
 
 .users p{
 	position: relative;
@@ -47,7 +56,7 @@
 
 h2{
 	position: relative;
-	width: 250px;
+	width: 200px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -126,3 +135,6 @@ h2{
 .dashquotes p{
 	font-size: 15px;
 }
+
+/*Edit Profile*/
+
