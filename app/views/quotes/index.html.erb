@@ -19,11 +19,14 @@
 		<%= quote.user.name unless quote.user.nil? %>
 		<%= link_to '~Show', quote %>
 
+		<% if user_signed_in? %>
 		<% if quote.user_id == current_user.id %>
 		<%= link_to 'Edit', edit_quote_path(quote) %>
 		<%= link_to 'Delete', quote_path(quote),
                     method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <%end%>
+        <%end%>
+        
 	</div>
 
 	<%end%>

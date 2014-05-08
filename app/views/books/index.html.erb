@@ -41,9 +41,11 @@
 
 		<p id="details"><%= book.user.name unless book.user.nil?%>		
 		<%= link_to '~Show', book %>
+		<% if user_signed_in? %>
 		<% if book.user_id == current_user.id %>
 			<%= link_to 'Edit', edit_book_path(book) %>
 			<%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+		<%end%>
 		<%end%>
 
 	</div>
