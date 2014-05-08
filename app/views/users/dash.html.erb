@@ -9,10 +9,10 @@
 	<ul>
 	<% @followers.each do |follow| %>
 	<li>
-		<p><%= follow.followee.name %></p>
-
+		<p><%= follow.followee.name %>
+		<%= link_to 'Show', follow.followee%></p>
 	</li>
-		<%end%>
+	<%end%>
 	</ul>
 </div>
 
@@ -23,7 +23,7 @@
 	<li>
 		<p><%= lent.title%>
 		<%= link_to 'Returned', Borrowed.where(book: lent).take!,
-           method: :delete, data: { confirm: 'Are you sure?' } %></p>
+           method: :delete, data: { confirm: 'Are you sure this book was returned?'} %></p>
 	</li>
 	<%end%>
 	</ul>
@@ -34,7 +34,7 @@
 	<ul>
 	<% @borrowed.each do |borrowed| %>
 	<li>
-		<p><%= borrowed.book.title unless borrowed.book.nil? %></p>
+		<p><%= borrowed.book.title unless borrowed.book.nil? %> from <%= borrowed.book.user.name%></p>
 	</li>
 	<%end%>
 	</ul>

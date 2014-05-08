@@ -2,12 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.bookt{
+.bookt p{
 	position: relative;
 	width: 100px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	size: 38px;
 }
 
 .categories{
@@ -21,8 +22,6 @@
 
 .categories li{
 	display:inline;
-	text-decoration: none;
-	color: black;
 }
 
 .books{

@@ -6,7 +6,7 @@ class Book < ActiveRecord::Base
   validates :title, presence: true
   validates :author, presence: true
   validates :genre, presence: true
-  validates :body, length: {maximum: 1500}, presence: true
+  validates :body, length: {maximum: 1500}
   validates :rating, length: {maximum: 1}, presence: true
   validates :filepicker_url, presence: true
 end

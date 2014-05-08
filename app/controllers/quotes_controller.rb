@@ -54,8 +54,8 @@ class QuotesController < ApplicationController
 	end
 
 	def destroy
-	if user_signed_in? && quote.user_id == current_user.id
 		@quote = Quote.find(params[:id])
+	if user_signed_in? && @quote.user_id == current_user.id
 		@quote.destroy
 		redirect_to quotes_path
 	else
