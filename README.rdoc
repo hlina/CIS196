@@ -1,8 +1,9 @@
-JavaScript:
-I used JavaScript for the home views. I added a function that centers my bookscroll wrapper at the bottom of the page, and a function that would center the random quote. That way, no matter the length of the quote displayed, the quote will still be centered. Lastly I made a function that adjusts the scrollbar according to how many books are currently in view.
+Final Submission
+This webapp is designed so that people can post books that they have read, helping them personally to keep track of the books they've read, how they liked them, and what they were about. It also allows people to put quotes that they have read to share with others. You can follow people on this app to get ideas for books to read and also request to borrow books from friends. The app can keep track of the books you've borrowed and lent out to people in the dashboard. The front page shows all the recent books and also draws a random quote from the quotes record database.
 
-I had trouble with centering the bookscroll and the quote using just CSS, which is why I turned to Javascript!
-I also, if you may have noticed, have worked very hard on styling since last homework. However, I'm still having some issues, which I hope to finish when I finally submit the entire project.
+The Ruby Gem I used was devise and filepicker. The filpicker allows people to post images of the books they've read. The Heroku Addon I have is SendGrid, which sends a message to the person you are trying to borrow a book from, after you hit borrow, and also sends a message to a person you have started following. If the person does not accept the borrow, they can go to their dashboard and hit returned next to the book.
+
+I have in my schema five databases. They include books, borroweds, followers, quotes, and users. Borroweds belongs to the book being borrowed and the user who would like to borrow it. Books and Quotes belong to Users. Followers belong to followers and followees. There are some validations to make sure when creating a new book, all the required information like title, author, genre, rating, and image are in there. The rating is a number from 1 to 10, and the 
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/
