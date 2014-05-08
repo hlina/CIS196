@@ -38,8 +38,8 @@
   </p>
  
    <p>
-    <%= f.label :category %><br>
-    <%= f.text_area :category %>
+    <%= f.label :category%><br>
+    <%= f.select :category, options_for_select(["Action","Classic","Educational","Fantasy","Religious","Romance","Self-Help","Suspense","To Read"]) %>
   </p>
 
   <p>
