@@ -13,6 +13,7 @@ group :production do
 	gem 'pg'
 end
 
+gem 'jquery-turbolinks'
 gem 'devise', '3.0'
 gem "filepicker-rails", "~> 1.0"
 

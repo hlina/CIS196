@@ -21,7 +21,7 @@
 	<ul>
 	<% @lent_book.each do |lent| %>
 	<li>
-		<p><%= lent.title%>
+		<p><%= lent.title%> by <%= Borrowed.where(book: lent).take!.user.name unless  Borrowed.where(book: lent).take!.user.nil?%>
 		<%= link_to 'Returned', Borrowed.where(book: lent).take!,
            method: :delete, data: { confirm: 'Are you sure this book was returned?'} %></p>
 	</li>
@@ -34,20 +34,21 @@
 	<ul>
 	<% @borrowed.each do |borrowed| %>
 	<li>
-		<p><%= borrowed.book.title unless borrowed.book.nil? %> from <%= borrowed.book.user.name%></p>
+		<% if !borrowed.book.nil? %>
+			<p><%= borrowed.book.title %> from <%= borrowed.book.user.name%></p>
+		<%end%>
 	</li>
 	<%end%>
 	</ul>
 </div>
 
 </div>
-
 <div class="dashelements">
 	<h2 class = "books"> Books </h2>
 	<% @books.each do |book| %>
 	<div class = "dashbooks">
 		<p id="title"><%= link_to book.title, book_path(book.id) %></p>
-		<p id="image"><%= filepicker_image_tag book.filepicker_url, w:285, h:285, fit: 'clip' %></td>
+		<p id="image"><%= filepicker_image_tag book.filepicker_url, w:185, h:285, fit: 'clip' %></td>
 		<p id = "rates"> Genre: <%= book.category%> ~Rating: <%= book.rating%> ~Availability:
 		
 		<% if book.available%>

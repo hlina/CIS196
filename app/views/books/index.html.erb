@@ -19,10 +19,10 @@
 	<div class="bookbox">
 		<p id = "title"><%= book.title%></p>
 		<% if !book.filepicker_url.nil?%>
-		<p id = "image"><%= filepicker_image_tag book.filepicker_url, w:260, h:260, fit: 'clip' %></p>
+		<p id = "image"><%= filepicker_image_tag book.filepicker_url, w:180, h:260, fit: 'clip' %></p>
 		<%end%>
 
-		<p id = "rates">Genre: <%= book.category%> ~Rating: <%= book.rating%> 
+		<p id = "rates">Genre: <%= book.category%> ~Rating: <%= book.rating%> </p>
 
 		<% if user_signed_in? %>
 		<% if !(Borrowed.find_by book_id: book.id) && book.available && !@borrowed.nil?%>
@@ -35,7 +35,7 @@
 					<%= f.submit "Borrow"%> </div>
 					<%end%>
 			<%else%>
-				<%= "~Out" %></p>
+				<p id="out"><%= "~Out" %></p>
 		<%end%>
 	<%end%>
 

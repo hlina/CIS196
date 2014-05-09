@@ -1,9 +1,30 @@
 Final Submission
+
+What is the app?
 This webapp is designed so that people can post books that they have read, helping them personally to keep track of the books they've read, how they liked them, and what they were about. It also allows people to put quotes that they have read to share with others. You can follow people on this app to get ideas for books to read and also request to borrow books from friends. The app can keep track of the books you've borrowed and lent out to people in the dashboard. The front page shows all the recent books and also draws a random quote from the quotes record database.
 
-The Ruby Gem I used was devise and filepicker. The filpicker allows people to post images of the books they've read. The Heroku Addon I have is SendGrid, which sends a message to the person you are trying to borrow a book from, after you hit borrow, and also sends a message to a person you have started following. If the person does not accept the borrow, they can go to their dashboard and hit returned next to the book.
+Gem and Addon:
+The Ruby Gems I used were devise and filepicker. Filepicker allows people to post images of the books they've read.The Heroku Addon I have used is SendGrid, which sends a message to the person you are trying to borrow a book from, after you hit borrow, and also sends a message to a person you have started following. If the person does not accept the borrow, they can go to their dashboard and hit returned next to the book.
 
-I have in my schema five databases. They include books, borroweds, followers, quotes, and users. Borroweds belongs to the book being borrowed and the user who would like to borrow it. Books and Quotes belong to Users. Followers belong to followers and followees. There are some validations to make sure when creating a new book, all the required information like title, author, genre, rating, and image are in there. The rating is a number from 1 to 10, and the 
+Database:
+I have in my schema five databases. They include books, borroweds, followers, quotes, and users. Borroweds belongs to the book being borrowed and the user who would like to borrow it. Books and Quotes belong to Users. Followers belong to followers and followees. 
+
+Validations:
+There are some validations to make sure when creating a new book, all the required information like title, author, genre, rating, and image are in there. The rating is a number from 1 to 10, and so the maxmimum length is one character. There is also a limit on the quote length and book body length for styling purposes, and just to keep the body and quote not too long in general. Also, just in case someone gets around the button, I have to validation so that people cannot follow the same person twice. Lastly, I have a validation for the quotes to make sure no one submits the exact same quote again. (Books doesn't have this validation because people may read the same book, and other people may want to borrow their copy.)
+
+Queries: 
+1) .where query is used in the application controller to create the search bar
+2) .where query is used in the books and quotes controller under cat_index. It allows the books and quotes to be sorted on their index pages by genre or category.
+3) .order is used in the home controller to order the books in the scroll bar in descending order of the time they were created, and .order('RANDOM()').first is used to pick a random quote to post.
+4) .order ascending by name is used in the user controller under index to list users in alphabetical order by their first name.
+5) .where is used in the user controller under dash for many things. It posts your books that are being lent out, and books that are others that you have borrowed. It posts the books and quotes of those you are following. 
+6) .limits is used also in the user controller under dash to just post the most recent 5 books and quotes from your followees.
+
+Javascript and JQuery:
+I used Javascript to do styling that was difficult to do with CSS. All javascript used is under home.js. The first function is used to vertically center the random quote on the home page. Since quote lengths vary, using javascript was necessary. Similarly, this was done to center to bookline and wrapper on the home page. Lastly, javascript was used to automatically change the height of the "selfbox." These boxes refer to the boxes of information on the user's dashboard. Since the number of people and number of books being lent out is constantly changing, it makes the height of the list equal approximately to the number of items in the list.
+
+Problems Encountered:
+I had trouble making the borrowing function. It was difficult to sort out what it would belong to, and how to use and find the users in order to sort the dash. Also, I had difficulties with my server in styling. This was more of just an inconvenience, but I had to constantly break and restart my server since it wouldn't update even the slightest of styling changes. It also happened where I wouldn't end the server, but the terminal was no longer there. I learned how to delete those running servers, and to push and pull previous from github that was working, in learning how to debug what wasn't working currently.
 
 Heroku link
 http://young-cliffs-7981.herokuapp.com/

@@ -1,8 +1,8 @@
-$(document).on("page:load", function(){
+$(function() {
 	centerQuote();
 	centerBookline();
 	centerWrapper();
-	heightSelfBox();
+	//heightSelfBox();
 
 	function centerQuote(){
 		var wrapWidth = $(".wrap").width();
@@ -28,11 +28,5 @@ $(document).on("page:load", function(){
 		$(".wrapper").css({"margin-left": marg, "margin-right":marg});
 	}
 
-	function heightSelfBox(){
-		var liHeight = $(".selfbox li").height();
-		var count = $(".selfbox li").size();
-		var height = count*17;
-		$(".selfbox").height(height);
-	}
 
 });
