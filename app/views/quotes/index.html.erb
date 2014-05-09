@@ -14,8 +14,9 @@
 
 	<% @quotes.each do |quote| %>
 	<div class="quotebox">
-		<p class = "qbody"><%= quote.body %></p>
-		<p class ="info"><%= quote.category%>~
+		<p id="qbody"><%= quote.body %></p>
+		<div class="info">
+		<p><%= quote.category%>~
 		<%= quote.user.name unless quote.user.nil? %>
 		<%= link_to '~Show', quote %>
 
@@ -26,6 +27,7 @@
                     method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <%end%>
         <%end%>
+    	</div>
         
 	</div>
 

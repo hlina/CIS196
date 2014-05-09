@@ -9,8 +9,7 @@
 	<ul>
 	<% @followers.each do |follow| %>
 	<li>
-		<p><%= follow.followee.name %>
-		<%= link_to 'Show', follow.followee%></p>
+		<p><%= link_to follow.followee.name, follow.followee%></p>
 	</li>
 	<%end%>
 	</ul>
@@ -68,10 +67,23 @@
 
 	<h2 class = "quotes"> Quotes </h2>
 	<% @quotes.each do |quote| %>
-	<div class = "dashquotes">
-		<p><%= quote.body %></p>
-		<h5><%= link_to quote.user.name, user_path(quote.user_id) %></h5>
-	</div>
-	<%end%>
+	<div class="quotebox">
+		<p id="qbody"><%= quote.body %></p>
+		<div class="info">
+		<p><%= quote.category%>~
+		<%= quote.user.name unless quote.user.nil? %>
+		<%= link_to '~Show', quote %>
 
+		<% if user_signed_in? %>
+		<% if quote.user_id == current_user.id %>
+		<%= link_to 'Edit', edit_quote_path(quote) %>
+		<%= link_to 'Delete', quote_path(quote),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <%end%>
+        <%end%>
+    	</div>
+        
+	</div>
+
+	<%end%>
 </div>

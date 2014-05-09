@@ -21,7 +21,8 @@
 		<% if !book.filepicker_url.nil?%>
 		<p id = "image"><%= filepicker_image_tag book.filepicker_url, w:180, h:260, fit: 'clip' %></p>
 		<%end%>
-
+		
+		<div class="details">
 		<p id = "rates">Genre: <%= book.category%> ~Rating: <%= book.rating%> </p>
 
 		<% if user_signed_in? %>
@@ -39,7 +40,7 @@
 		<%end%>
 	<%end%>
 
-		<p id="details"><%= book.user.name unless book.user.nil?%>		
+		<p><%= book.user.name unless book.user.nil?%>		
 		<%= link_to '~Show', book %>
 		<% if user_signed_in? %>
 		<% if book.user_id == current_user.id %>
@@ -47,6 +48,7 @@
 			<%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></p>
 		<%end%>
 		<%end%>
+		</div>
 
 	</div>
 
