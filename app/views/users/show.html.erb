@@ -8,11 +8,10 @@
 	<%= @user.email %>
 </p>
 
-<div class="bookt">
-<p>Books</p>
-</div>
+<div class="dashelements">
+	<h2 class = "books"> Books </h2>
 
-<ul class="categories">
+	<ul class="categories">
 	<li id= "cat"><%= link_to "Action", cat_books_path("Action")%></li>
 	<li id= "cat"><%= link_to "Classic", cat_books_path("Classic")%></li>
 	<li id= "cat"><%= link_to "Educational", cat_books_path("Educational")%></li>
@@ -22,50 +21,32 @@
 	<li id= "cat"><%= link_to "Self-Help", cat_books_path("Self-Help")%></li>
 	<li id= "cat"><%= link_to "Suspense", cat_books_path("Suspense")%></li>
 	<li id= "cat"><%= link_to "To Read", cat_books_path("To Read")%></li>
-</ul>
+	</ul>
 
-<div class = "books">
 	<% @books.each do |book| %>
-	<div class="bookbox">
-		<p id = "title"><%= book.title%></p>
-		<% if !book.filepicker_url.nil?%>
-		<p id = "image"><%= filepicker_image_tag book.filepicker_url, w:180, h:260, fit: 'clip' %></p>
-		<%end%>
-
-		<p id = "rates">Genre: <%= book.category%> ~Rating: <%= book.rating%> </p>
-
-		<% if user_signed_in? %>
-		<% if !(Borrowed.find_by book_id: book.id) && book.available && !@borrowed.nil?%>
-				<%= form_for(@borrowed) do |f| %>
-					<div class = "field">
-					<%= f.hidden_field :user_id, :value => current_user.id %> </div>
-					<div class = "field">
-					<%= f.hidden_field :book_id, :value => book.id %> </div>
-					<div class= "actions">
-					<%= f.submit "Borrow"%> </div>
-					<%end%>
+	<div class = "dashbooks">
+		<p id="title"><%= link_to book.title, book_path(book.id) %></p>
+		<p id="image"><%= filepicker_image_tag book.filepicker_url, w:185, h:285, fit: 'clip' %></td>
+		<p id = "rates"> Genre: <%= book.category%> ~Rating: <%= book.rating%> ~Availability:
+		
+		<% if book.available%>
+			<%="I own it"%>
 			<%else%>
-				<p id="out"><%= "~Out" %></p>
-		<%end%>
-	<%end%>
+			<%="I don't own it"%></p>
+			<%end%> 
 
-		<p id="details"><%= book.user.name unless book.user.nil?%>		
+		<p><%= link_to book.user.name, user_path(book.user_id) %>
 		<%= link_to '~Show', book %>
 		<% if book.user_id == current_user.id %>
 			<%= link_to 'Edit', edit_book_path(book) %>
 			<%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></p>
 		<%end%>
-
 	</div>
-
 	<%end%>
-</div>
 
-<div class="qtitle">
-<p>Quotes</p>
-</div>
+	<h2 class = "quotes"> Quotes </h2>
 
-<ul class="categories">
+	<ul class="categories">
 	<li><%= link_to "Encouragement", cat_quotes_path("Encouragement")%></li>
 	<li><%= link_to "Future", cat_quotes_path("Future")%></li>
 	<li><%= link_to "Humour", cat_quotes_path("Humour")%></li>
@@ -73,8 +54,8 @@
 	<li><%= link_to "Relationships", cat_quotes_path("Relationships")%></li>
 	<li><%= link_to "Religious", cat_quotes_path("Religious")%></li>
 	<li><%= link_to "Romantic", cat_quotes_path("Romantic")%></li>
-</ul>
-
+	</ul>
+	
 	<% @quotes.each do |quote| %>
 	<div class="quotebox">
 		<p id="qbody"><%= quote.body %></p>
@@ -95,3 +76,5 @@
 	</div>
 
 	<%end%>
+</div>
+
